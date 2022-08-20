@@ -32,11 +32,11 @@
         return (
           <div>
             <form onSubmit={addTodo}>
-                <input 
+                <input
                 type="text"
                 value={todo.description}
-                onChange = {inputChange} 
-                />
+                onChange = {inputChange}
+               />
                 <button>Dobavit</button>
             </form>
             <TodoList allTodo={todos}/>
@@ -45,7 +45,8 @@
       }
       function TodoList({allTodo}){
         return(
-          <ol>
+         <ol>
+            <h1>spisok</h1>
             {allTodo.map(
               (element, index) => <TodoItem key={index} item = {element}/>)}  
           </ol>
@@ -57,7 +58,9 @@
             color: "orange",
             fontSize: "30px"
         }
-        return <li style={itemStyle}>{item.description}</li>
+        return (
+          <li style={itemStyle}>{item.description}</li>
+        )
       }
 
       ReactDOM.render(<Main/>, document.getElementById("core"))
